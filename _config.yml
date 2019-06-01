@@ -79,6 +79,5 @@ theme: vexo
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/FightingAsParents/FightingAsParents.github.io.git
-  name: FightingAsParents
-  email: FightingAsParents@gmail.com
+  repo: https://__GITHUB_TOKEN__@github.com/FightingAsParents/FightingAsParents.github.io.git
+  branch: master
