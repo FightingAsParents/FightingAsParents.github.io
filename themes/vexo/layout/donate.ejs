@@ -48,7 +48,7 @@
         totalUnpay = output.filter(a=>a.money==0&&a.memo!='游行');
 
 //        $('#summary').append(`<strong>参与家庭数：${output.length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB})，<span id="unpay">报名暂未交款者</span>${totalUnpay.length}人</strong>`);
-        $('#summary').append(`<strong>参与家庭数：${output.length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB})</strong>`);
+        $('#summary').append(`<strong>参与家庭数：${output.length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB}), 费用支出待公示...</strong>`);
         let outputArray = output.map(a=>{
           let mm = '';
           if (a.money != 0){
