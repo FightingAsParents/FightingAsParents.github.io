@@ -1,5 +1,5 @@
-author: FightingAsParents 
-description: FightingAsParents 
+author: FightingAsParents.org
+description: FightingAsParents.org, to protect our kids, we have to fight with evil. 不做鸵鸟、不做羔羊。没有人更比你有资格对你的孩子负责。
 keyword: FightingAsParents 
 favicon: 
 
@@ -38,6 +38,10 @@ comment: disqus
 # uyan config
 # if you want to use uyan as your blog comment, plz remove/comment out gitment config
 baidu_id: 
+
+google_analytics:
+  enabled: true
+  id: UA-141207496-1
 
 # disqus config
 disqus_shortname: fightingasparents

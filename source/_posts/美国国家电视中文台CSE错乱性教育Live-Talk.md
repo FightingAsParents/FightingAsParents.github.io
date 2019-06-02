@@ -9,4 +9,4 @@ tags:
 时间：5月25日周六下午2点
 地点：100 N Barranca  street #150 West Covina CA91791
 
-![](/resources/WechatIMG63.jpeg)
+![](/resources/images/WechatIMG63.jpeg)

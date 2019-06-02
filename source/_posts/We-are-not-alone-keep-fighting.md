@@ -6,9 +6,9 @@ tags:
 
 Facebook上的一些feedback
 
-![](/resources/WechatIMG11.jpeg)
-![](/resources/WechatIMG12.jpeg)
-![](/resources/WechatIMG41.jpeg)
+![](/resources/images/WechatIMG11.jpeg)
+![](/resources/images/WechatIMG12.jpeg)
+![](/resources/images/WechatIMG41.jpeg)
 
 https://www.facebook.com/145902116128546/posts/353629132022509?s=722175842&sfns=xmwa
 
