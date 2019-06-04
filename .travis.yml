@@ -15,4 +15,5 @@ before_script:
 script:
 - hexo clean
 - hexo g
+- node node_modules/gulp/bin/gulp.js
 - hexo d

@@ -7,10 +7,10 @@ tags:
 今天给孩子注册保险信息，突然留意到孩子到12岁后父母就剩下买单的权利了，好可怕！
 
 
-## Children up to and including age 11
+#### Children up to and including age 11
  
 - Test results
-- `Email my doctor`
+- _Email my doctor_
 - Past visit information
 - Schedule Appointments
 - View/cancel appointments
@@ -23,14 +23,14 @@ tags:
 - Allergies
 - Track my health
 - Personal Action Plan*
-- `My coverage and costs`*
-- `Estimates` *
-- `Out-of-pocket summary`*
+- _My coverage and costs*_
+- _Estimates *_
+- _Out-of-pocket summary*_
 - Claims summary *
 - Video visits
  
  
-## Teens age 12 up to and including age 17
+#### Teens age 12 up to and including age 17
  
 - Email my doctor
 - Allergies

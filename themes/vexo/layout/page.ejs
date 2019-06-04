@@ -1,6 +1,6 @@
 <div id="article-banner">
   <h2><%- page.title %></h2>
-  <p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>
+  <!--<p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>-->
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -59,7 +59,6 @@ aside{
     <!-- 二维码 START -->
     <% if (theme.qrcode) { %>
       <div class="qrcode">
-        <canvas id="share-qrcode"></canvas>
         <p class="notice">扫描二维码，分享此文章</p>
       </div>
     <% } %>
@@ -142,9 +141,12 @@ aside{
 <% if (theme.qrcode) { %>
   <script>
     var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
+
+  foreground: '#42b983',
+  size: 200,
       value: document.location.href
     });
+    $('.qrcode').prepend('<img src="'+ qr.toDataURL('image/jpeg')+'"/>');
   </script>
 <% } %>
 
