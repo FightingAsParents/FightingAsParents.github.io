@@ -29,6 +29,11 @@
         let output = data.split(/\n/gi).filter(a=>a).map(a=>{
           let temp = a.split(','); 
           let moneyItem = (temp[2]||'').trim();
+          let income = true;
+          if(moneyItem.startsWith('-')){
+            income = false;
+            moneyItem = moneyItem.substring(1);
+          }
           let unit = '$';
           if (moneyItem.startsWith('¥')){
             unit = '¥';
@@ -38,21 +43,28 @@
             id: parseInt(temp[0]||999), 
             name:(temp[1]||'').trim(), 
             money: parseInt(moneyItem.replace(/\$|\¥/,'').trim()) || 0,
+            income: income,
             unit: unit,
             memo: (temp[3]||'').trim()
           };
         });
         window.output = output;
-        let totalDollers = output.filter(a=>a.unit=='$').map(a=>a.money||0).reduce((a,b)=>a+b);
-        let totalRMB = output.filter(a=>a.unit!='$').map(a=>a.money||0).reduce((a,b)=>a+b);
+        let totalDollers = output.filter(a=>a.income && a.unit=='$').map(a=>a.money||0).reduce((a,b)=>a+b);
+        let totalRMB = output.filter(a=>a.income && a.unit!='$').map(a=>a.money||0).reduce((a,b)=>a+b);
+
+        let totalOutDollers = output.filter(a=>!a.income && a.unit=='$').map(a=>a.money||0).reduce((a,b)=>a+b, 0);
+        let totalOutRMB = output.filter(a=>!a.income && a.unit!='$').map(a=>a.money||0).reduce((a,b)=>a+b, 0);
         totalUnpay = output.filter(a=>a.money==0&&a.memo!='游行');
 
 //        $('#summary').append(`<strong>参与家庭数：${output.length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB})，<span id="unpay">报名暂未交款者</span>${totalUnpay.length}人</strong>`);
-        $('#summary').append(`<strong>参与家庭数：${output.length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB}), 费用支出待公示...</strong>`);
+        $('#summary').append(`<strong>参与家庭数：${output.filter(a=>a.income).length}, 筹集金额共计：(美元 \$${totalDollers}, 人民币 ¥${totalRMB}), 费用支出: (美元 \$${totalOutDollers}, 人民币 ¥${totalOutRMB}) </strong>`);
         let outputArray = output.map(a=>{
           let mm = '';
           if (a.money != 0){
             mm = '(' + a.unit + a.money + ')';
+          }
+          if (!a.income){
+            return `<p style="color:green;">支出: ${a.id}. ${a.name} ${mm}<small>${a.memo}</small></p>`
           }
           return (a.money || a.memo=='游行') ? `<p>${a.id}. ${a.name} ${mm}<small>${a.memo}</small></p>`: `<p>${a.id}. ${a.name} <small>${a.memo}</small></p>`;
         });
